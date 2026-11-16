@@ -1,4 +1,7 @@
-# DSH 端安装说明（本机或另一台设备）
+# DSH 端安装说明
+
+> **前置条件**：本文假设你已经装好 **DeepSeek Harness** 和 **Node.js ≥ 22.13**，并且有可用的 DSH profile。
+> DSH 本体的安装不在本仓库范围内（本项目不分发、不代装 DSH），请走官方渠道。
 
 `qq-bridge` 仓库本身包含桥接、控制台和插件，但 **DSH 端的两个聊天模式（`qq-chat` / `qq-chat-v2`）以及 MCP 挂载** 不在仓库根目录，需要通过本说明安装到目标设备的 DSH 环境中。
 
@@ -9,11 +12,12 @@
 1. **克隆/获取仓库**：
 
    ```bash
-   git clone https://github.com/Derpyu520/qq-bridge.git
-   cd qq-bridge
+   git clone https://github.com/lijiyang2007/dsh-qq-starter.git
+   cd dsh-qq-starter
    ```
 
-   > 默认分支 `main` 即当前版本 **v0.1.5**（适配 DSH 0.1.5-rc.1），clone 下来无需切换分支。
+   > 默认分支 `main` 即当前版本 **v0.2.1-r1**（适配 **DSH 0.2.x**），clone 下来无需切换分支。
+   > 本仓库派生自 `Derpyu520/qq-bridge` 的 `v0.2.1-r1` 快照，详见 [NOTICE.md](../../NOTICE.md)。
 
 2. **安装依赖**：
 
