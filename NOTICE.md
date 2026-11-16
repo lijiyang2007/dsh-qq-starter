@@ -62,6 +62,30 @@ SnowLuma 图标替换脚本、翻唱 / 语音合成流水线（`breeze` 相关�
 绕开这两个包自身的 ESM 打包缺陷）。该修补只作用于本机安装副本，**不进入本仓库**；
 SnowLuma 许可允许为自身非商业使用而修改。**本软件不修改 SnowLuma 应用本体。**
 
+### 3.2 `@snowluma/*` 的许可瑕疵（已知问题）
+
+**事实**（2026-09-20 实测，可自行复核）：
+
+- 两个包的 `package.json` 都声明 `"license": "SEE LICENSE IN LICENSE"`；
+- 但**发布的 npm 包里没有 LICENSE 文件**：`npm pack @snowluma/sdk --dry-run` 的文件清单只有
+  `dist/`、`README.md`、`CHANGELOG.md`、`VERSIONING.md`；
+- 原因在源头：仓库里 `packages/sdk/package.json` 与 `packages/mcp/package.json` 的 `files` 数组
+  没有包含 `LICENSE`，且 `packages/sdk/LICENSE` 与 `packages/mcp/LICENSE` 在仓库中并不存在。
+
+**这意味着什么**：这两个包的许可在包内**不可判定**——`SEE LICENSE IN LICENSE` 指向一个不存在的文件。
+但 SnowLuma LICENSE §1 对 "Software" 的定义是「the SnowLuma source code and assets **in this repository**」，
+而 `packages/sdk` 与 `packages/mcp` 就在那个仓库里，所以它们在文本上确实受同一份非商业许可约束。
+
+**本仓库对它们的处理**：
+
+1. 仓库内**不含、不分发**它们的代码：`node_modules/` 已在 `.gitignore`；已跟踪文件中没有任何原生二进制
+   （`.node` / `.dll` / `.so`）或 `@snowluma` 路径下的文件；
+2. 但 `npm install` 会改本机安装副本：`postinstall` 运行 `scripts/patch-snowluma-sdk.mjs`，
+   对 `node_modules/@snowluma/{sdk,mcp}` 的 `dist/**/*.js` 做一次性机械修补（只给相对导入补 `.js`
+   扩展名，绕开这两个包自身的 ESM 打包问题）。许可允许为自身非商业使用而修改；
+   它**只作用于本机安装副本、不进入本仓库**；
+3. 若要彻底消除不确定性，可向 SnowLumaDevs 书面确认 `packages/sdk` 与 `packages/mcp` 适用的许可。
+
 ## 四、与 SnowLuma 的关系
 
 ### 4.1 独立关系
