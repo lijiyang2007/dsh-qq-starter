@@ -11,6 +11,7 @@
 | 文档 | 一句话说明 |
 | --- | --- |
 | [guides/DSH_SETUP.md](guides/DSH_SETUP.md) | DSH 端安装：`qq-chat` / `qq-chat-v2` preset 与三个 MCP server 怎么挂到目标设备 |
+| [guides/SNOWLUMA.md](guides/SNOWLUMA.md) | **SnowLuma 获取、校验与边界**：为什么本仓库不能分发它、官方渠道现状、发行包 SHA256 校验、两个 token 不是同一个 |
 | [guides/DSH_020_ADAPTATION.md](guides/DSH_020_ADAPTATION.md) | **DSH 0.2.0 适配改动记录**：现象 / 为什么必须改 / 证据 / 怎么验证 |
 | [guides/DSH_021_ADAPTATION.md](guides/DSH_021_ADAPTATION.md) | **最新**：DSH 0.2.1 适配（`{{cwd}}` 提示词变量被删导致的 P0）。升级 DSH 前先读 |
 | [guides/SECURITY_BASELINE.md](guides/SECURITY_BASELINE.md) | **安全基线与威胁模型**：威胁主体、已实现的边界、已知残余风险、发布前回归清单。**改动安全相关代码前必读** |

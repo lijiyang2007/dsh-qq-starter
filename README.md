@@ -40,7 +40,7 @@
 |---|---|---|
 | **Node.js** ≥ 22.13 | <https://nodejs.org> | 否 |
 | **DeepSeek Harness** | 官方渠道 | 否 |
-| **SnowLuma** | 官方渠道自行获取并安装（见下方「边界声明」） | **否** |
+| **SnowLuma** | 官方渠道自行获取并安装（见 [docs/guides/SNOWLUMA.md](docs/guides/SNOWLUMA.md)） | **否** |
 | **qq-bridge** | **本仓库，MIT 许可** | 是 |
 | 一个人设卡 | 你自己写，`roles/` 里 | 空模板 |
 
@@ -82,6 +82,7 @@ copy config.example.json config.json     # Windows CMD
 
 详细的分步说明见：
 
+- [docs/guides/SNOWLUMA.md](docs/guides/SNOWLUMA.md) —— **SnowLuma**：获取边界、发行包 SHA256 校验、两个 token 不是同一个
 - [docs/guides/DSH_SETUP.md](docs/guides/DSH_SETUP.md) —— DSH 端：preset 与 MCP 怎么挂
 - [docs/guides/SECURITY_BASELINE.md](docs/guides/SECURITY_BASELINE.md) —— 改安全相关代码前必读
 - [docs/guides/PRIVACY.md](docs/guides/PRIVACY.md) —— 数据往哪出、怎么关
